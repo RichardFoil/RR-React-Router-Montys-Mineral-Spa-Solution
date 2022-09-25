@@ -8,7 +8,8 @@ import Packages from './components/Packages'
 
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
-
+import Signup from './components/signupmodal'
+import HomepageCarousel from './components/carousel'
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        
         <header>
           <h1 className="title">Welcome to Monty's Mineral SPA</h1>
 
@@ -38,12 +40,16 @@ function App() {
                           <Link to="/packages">Our Packages</Link> 
                       </Nav.Link>
                   </Nav.Item>
+                  <Nav.Item>
+                    <Signup />
+                  </Nav.Item>
               </Nav>
             </Container>
 
         </header>
 
-        <div className="display">
+        <div className='display'>
+          <HomepageCarousel />
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/packages" render={() => <Packages packages={packages}/>}  />
